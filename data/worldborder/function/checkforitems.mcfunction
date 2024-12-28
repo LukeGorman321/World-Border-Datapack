@@ -9,7 +9,7 @@ scoreboard players operation #temp variables *= #multiplier variables
 scoreboard players operation #progress variables += #temp variables
 data modify block ~ ~ ~ Items[13].id set value "air"
 
-execute as @p at @s run playsound minecraft:entity.zombie_villager.cure block @s ~ ~ ~ 0.5
+playsound minecraft:entity.zombie_villager.cure block @s ~ ~ ~ 0.5
 particle end_rod ~ ~ ~ 0 1 0 1 15
 
 execute if score #progress variables >= #required variables run function worldborder:expand
