@@ -14,7 +14,9 @@ particle end_rod ~ ~ ~ 0 1 0 1 15
 
 execute if score #progress variables >= #required variables run function worldborder:expand
 
-bossbar set minecraft:progress name [{"text":"Progress: ","color":"green"},\
+bossbar set minecraft:progress name [{"text":"Radius: ","color":"green"},\
+{"score":{"name":"#border","objective":"variables","color":"green"}},\
+{"text":" Progress: ","color":"green"},\
 {"score":{"name":"#progress","objective":"variables","color":"green"}},\
 {"text":"/","color":"green"},{"score":{"name":"#required","objective":"variables","color":"green"}}]
 execute store result bossbar minecraft:progress value run scoreboard players get #progress variables
