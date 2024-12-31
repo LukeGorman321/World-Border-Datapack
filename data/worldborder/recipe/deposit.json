@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:crying_obsidian",
+    "B": "minecraft:diamond_block",
+    "C": "minecraft:ender_chest"
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "id": "minecraft:armor_stand",
+    "components": {
+      "minecraft:item_name": "[{'text':'Portable Deposit'}]",
+      "minecraft:entity_data": {
+        "id": "minecraft:armor_stand",
+        "Small": true
+      }
+    },
+    "count": 1
+  }
+}

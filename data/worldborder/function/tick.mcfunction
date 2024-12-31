@@ -2,15 +2,17 @@
 #
 # Runs every tick
 
-execute if score #menu variables matches 0 run function worldborder:bartoggle
+execute as @e[tag=worldbordermanager] at @s if score @s menu matches 0 run function worldborder:bartoggle
 
-execute at @e[tag=worldbordermanager] unless items block ~ ~ ~ container.22 minecraft:writable_book if score #menu variables matches 1 run item replace block ~ ~ ~ container.13 with air
-execute at @e[tag=worldbordermanager] unless items block ~ ~ ~ container.22 minecraft:writable_book if score #menu variables matches 0 run scoreboard players set #menu variables 2
-execute at @e[tag=worldbordermanager] unless items block ~ ~ ~ container.22 minecraft:writable_book if score #menu variables matches 1 run scoreboard players set #menu variables 0
-execute at @e[tag=worldbordermanager] unless items block ~ ~ ~ container.22 minecraft:writable_book if score #menu variables matches 2 run scoreboard players set #menu variables 1
+execute as @e[tag=worldbordermanager] at @s unless items block ~ ~ ~ container.22 minecraft:writable_book if score @s menu matches 2 run item replace block ~ ~ ~ container.13 with air
+execute as @e[tag=worldbordermanager] at @s unless items block ~ ~ ~ container.22 minecraft:writable_book if score @s menu matches 0 run scoreboard players set @s menu 3
+execute as @e[tag=worldbordermanager] at @s unless items block ~ ~ ~ container.22 minecraft:writable_book if score @s menu matches 2 run scoreboard players set @s menu 0
+execute as @e[tag=worldbordermanager] at @s unless items block ~ ~ ~ container.22 minecraft:writable_book if score @s menu matches 1 run scoreboard players set @s menu 2
+execute as @e[tag=worldbordermanager] at @s unless items block ~ ~ ~ container.22 minecraft:writable_book if score @s menu matches 3 run scoreboard players set @s menu 1
 
-execute as @e[tag=worldbordermanager] at @s if score #menu variables matches 0 run function worldborder:shulkersetup
-execute as @e[tag=worldbordermanager] at @s if score #menu variables matches 1 run function worldborder:shulkersetup2
+execute as @e[tag=worldbordermanager] at @s if score @s menu matches 0 run function worldborder:shulkersetup
+execute as @e[tag=worldbordermanager] at @s if score @s menu matches 1 run function worldborder:shulkersetup2
+execute as @e[tag=worldbordermanager] at @s if score @s menu matches 2 run function worldborder:shulkersetup3
 
 execute as @e[tag=worldbordermanager] at @s run particle portal ~ ~ ~ 0 1 0 3 2
 
@@ -27,4 +29,6 @@ kill @e[type=item,nbt={Item:{components:{"minecraft:lore":['""']}}}]
 
 # Check for items and update world border 
 
-execute as @e[tag=worldbordermanager] at @s if score #menu variables matches 0 if data block ~ ~ ~ {Items:[{Slot:13b}]} if function worldborder:getthirteenth run function worldborder:checkforitems
+execute as @e[tag=worldbordermanager] at @s if score @s menu matches 0 if data block ~ ~ ~ {Items:[{Slot:13b}]} if function worldborder:getthirteenth run function worldborder:checkforitems
+
+execute as @e[type=armor_stand,nbt={Small:true}] at @s align xyz summon block_display run function worldborder:newdeposit

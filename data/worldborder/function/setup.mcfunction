@@ -10,6 +10,8 @@ tag @s add worldbordermanager
 worldborder center ~ ~
 worldborder set 32
 
+scoreboard objectives add menu dummy
+
 function worldborder:makeshulker
 
 scoreboard objectives add variables dummy
@@ -82,5 +84,17 @@ data modify storage blocks Blocks set value [\
 {multiplier:1, i: 36, next:37, slot:1, name:"arrow"},\
 {multiplier:1, i: 37, next:38, slot:1, name:"wheat"},\
 {multiplier:1, i: 38, next:39, slot:1, name:"sugar"},\
-{multiplier:1, i: 39, next:0, slot:1, name:"poppy"},\
+{multiplier:1, i: 39, next:40, slot:1, name:"poppy"},\
+{multiplier:1, i: 40, next:41, slot:1, name:"sand"},\
+{multiplier:3, i: 41, next:42, slot:1, name:"basalt"},\
+{multiplier:3, i: 42, next:43, slot:1, name:"mangrove_log"},\
+{multiplier:3, i: 43, next:44, slot:1, name:"cherry_log"},\
+{multiplier:3, i: 44, next:45, slot:1, name:"pale_oak_log"},\
+{multiplier:4, i: 45, next:46, slot:1, name:"acacia_sapling"},\
+{multiplier:4, i: 46, next:47, slot:1, name:"dark_oak_sapling"},\
+{multiplier:4, i: 47, next:48, slot:1, name:"jungle_sapling"},\
+{multiplier:4, i: 48, next:49, slot:1, name:"mangrove_propagule"},\
+{multiplier:4, i: 49, next:50, slot:1, name:"cherry_sapling"},\
+{multiplier:4, i: 50, next:51, slot:1, name:"pale_oak_sapling"},\
+{multiplier:1, i: 51, next:0, slot:1, name:"bamboo"},\
 ]
