@@ -25,3 +25,5 @@ scoreboard players operation #fourfifth variables /= #five variables
 scoreboard players operation #twofifth variables *= #two variables
 scoreboard players operation #threefifth variables *= #three variables
 scoreboard players operation #fourfifth variables *= #four variables
+
+execute if score #progress variables >= #required variables run function worldborder:expand
